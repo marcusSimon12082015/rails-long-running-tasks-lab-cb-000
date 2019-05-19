@@ -1,9 +1,13 @@
 class SongsController < ApplicationController
+  require 'csv'
 
   def index
     @songs = Song.all
   end
 
+  def upload 
+    
+  end 
   def show
     @song = Song.find(params[:id])
   end
