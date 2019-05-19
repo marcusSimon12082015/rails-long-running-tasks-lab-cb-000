@@ -9,7 +9,7 @@ class SongsController < ApplicationController
     CSV.foreach(params[:file].path,headers:true) do |song|
       Song.create(title:song[0],artist:Artist.find_or_create_by(name:song[1]))
     end
-    redirect_to song_path
+    redirect_to songs_path
   end
 
   def show
